@@ -1,6 +1,5 @@
-﻿using System;
+﻿using Qliniqueue.Views;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace Qliniqueue
 {
@@ -10,7 +9,7 @@ namespace Qliniqueue
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new RegisterPage();
         }
 
         protected override void OnStart()
