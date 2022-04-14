@@ -35,7 +35,8 @@ namespace Qliniqueue.Views
             db.Insert(user);
             Device.BeginInvokeOnMainThread(async () =>
             {
-                var result = await this.DisplayAlert("Welcome!", "Successfull registration!", "Yes", "Cancel");
+                var result = await this.DisplayAlert("Welcome!", "Successfull registration!", "OK", "");
+                if (result) await Navigation.PushAsync(new LoginPage());
             });
         }
     }

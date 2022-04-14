@@ -9,7 +9,7 @@ namespace Qliniqueue
         {
             InitializeComponent();
 
-            MainPage = new RegisterPage();
+            MainPage = new LoginPage();
         }
 
         protected override void OnStart()
