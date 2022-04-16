@@ -3,6 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Qliniqueue.App">
     <Application.Resources>
+        <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="#5A97B1"/>
+            <Setter Property="BarTextColor" Value="White"/>
+        </Style>
 
     </Application.Resources>
 </Application>

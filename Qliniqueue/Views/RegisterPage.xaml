@@ -11,22 +11,27 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
                     <StackLayout Grid.Row="0">
-                        <Entry Placeholder="Username" FontSize="16" x:Name="entryUsername"/>
+                        <Label Text="Sign up" FontSize="50" TextColor="#5A97B1" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" Margin="0,0,0,100"/>
                     </StackLayout>
 
                     <StackLayout Grid.Row="1">
-                        <Entry Placeholder="Email" FontSize="16" x:Name="entryEmail"/>
+                        <Entry Placeholder="Username" FontSize="16" x:Name="entryUsername"/>
                     </StackLayout>
 
                     <StackLayout Grid.Row="2">
-                        <Entry Placeholder="Password" IsPassword="True" FontSize="16" x:Name="entryPassword"/>
+                        <Entry Placeholder="Email" FontSize="16" x:Name="entryEmail"/>
                     </StackLayout>
 
                     <StackLayout Grid.Row="3">
-                        <Button Text="Register" FontSize="12" TextColor="White" CornerRadius="5" HorizontalOptions="CenterAndExpand" WidthRequest="100" BackgroundColor="#5A97B1" Clicked="bttnRegister_Clicked" x:Name="bttnRegister"/>
+                        <Entry Placeholder="Password" IsPassword="True" FontSize="16" x:Name="entryPassword"/>
+                    </StackLayout>                
+                    
+                    <StackLayout Grid.Row="4">
+                        <Button Text="Sign up" FontSize="12" TextColor="White" CornerRadius="5" HorizontalOptions="CenterAndExpand" WidthRequest="100" BackgroundColor="#5A97B1" Clicked="bttnRegister_Clicked" x:Name="bttnRegister"/>
                     </StackLayout>
                 </Grid>
             </StackLayout>
