@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Qliniqueue.Views.FutureDatesListPage"
+            BarBackgroundColor="DarkGray">
+
+    <ContentPage Title="Soron következők">
+        <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout >
+                        <Label Text="Soron következő időpontok" FontSize="25" TextColor="#5A97B1" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" Margin="0,20,0,20"/>
+                    </StackLayout>
+
+                    <ListView x:Name="DateListView" ItemsSource="{Binding dates}" HasUnevenRows="True" SeparatorVisibility="None" SelectionMode="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell >
+                                <Grid Padding="15">
+                                        <StackLayout>
+                                            
+                                            <Label Text="{Binding DisplayText}"
+                                             FontSize="22" 
+                                            FontAttributes="Bold"
+                                            TextColor="Black"
+                                            VerticalOptions="CenterAndExpand"
+                                            />
+
+                                            <Label Text="{Binding DoctorName}"
+                                             FontSize="22" 
+                                            FontAttributes="Bold"
+                                            TextColor="Black"
+                                            VerticalOptions="CenterAndExpand" 
+                                            />
+
+                                        </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                            
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+    </ContentPage>
+
+
+    <ContentPage Title="Lejártak">
+        <ContentPage.Content>
+            <ScrollView>
+                <StackLayout>
+                    <StackLayout >
+                        <Label Text="Lejárt időpontok" FontSize="25" TextColor="#5A97B1" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" Margin="0,20,0,20"/>
+                    </StackLayout>
+
+                    <ListView x:Name="DateListView2" ItemsSource="{Binding dates}" HasUnevenRows="True" SeparatorVisibility="None" SelectionMode="None">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell >
+                                    <Grid Padding="15">
+                                        <StackLayout>
+                                            <Label Text="{Binding DisplayText}"
+                                             FontSize="22" 
+                                            FontAttributes="Bold"
+                                            TextColor="Black"
+                                            VerticalOptions="CenterAndExpand"
+                                            />
+
+                                            <Label Text="{Binding DoctorName}"
+                                             FontSize="22" 
+                                            FontAttributes="Bold"
+                                            TextColor="Black"
+                                            VerticalOptions="CenterAndExpand" 
+                                            />
+
+                                        </StackLayout>
+                                    </Grid>
+                                </ViewCell>
+
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </StackLayout>
+            </ScrollView>
+        </ContentPage.Content>
+    </ContentPage>
+
+</TabbedPage>
