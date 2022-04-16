@@ -32,12 +32,18 @@ namespace Qliniqueue.Views
                 Email = entryEmail.Text,
                 Password = entryPassword.Text
             };
-            db.Insert(user);
-            Device.BeginInvokeOnMainThread(async () =>
-            {
-                var result = await this.DisplayAlert("Welcome!", "Successfull registration!", "OK", "");
-                if (result) await Navigation.PushAsync(new LoginPage());
-            });
+            if (!string.IsNullOrEmpty(user.Email) && !string.IsNullOrEmpty(user.Username) && !string.IsNullOrEmpty(user.Password))
+            { 
+                db.Insert(user);
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    var result = await this.DisplayAlert("Információ", "Sikeres regisztráció!", "OK", ":)");
+                    if (result) await Navigation.PushAsync(new LoginPage());
+                });
+            }
+            else
+                DisplayAlert("Hiba", "Nincs kitöltve minden mező!", "OK", "_");
+            
         }
     }
 }

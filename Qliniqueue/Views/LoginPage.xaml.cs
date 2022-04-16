@@ -24,7 +24,7 @@ namespace Qliniqueue.Views
         {
             var dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UsersDB.db");
             var db = new SQLiteConnection(dbPath);
-            var query = db.Table<RegisterUsersTable>().Where(u => u.Username.Equals(entryUsername.Text) && u.Password.Equals(entryPassword.Text)).FirstOrDefault();
+            var query = db.Table<RegisterUsersTable>().Where(u => u.Username.Equals(entryUsername.Text) || u.Email.Equals(entryUsername.Text) && u.Password.Equals(entryPassword.Text)).FirstOrDefault();
             
             if(query != null)
             {
@@ -34,7 +34,7 @@ namespace Qliniqueue.Views
             {
                 Device.BeginInvokeOnMainThread(async () =>
                 {
-                    var result = await this.DisplayAlert("Error!", "Login failed!", "OK", "");
+                    var result = await this.DisplayAlert("Hiba", "Sikertelen bejelentkezés!", "OK", ":(");
                     if (result) await Navigation.PushAsync(new LoginPage());
                     else await Navigation.PushAsync(new LoginPage());
                 });
