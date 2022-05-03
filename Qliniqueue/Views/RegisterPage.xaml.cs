@@ -33,8 +33,9 @@ namespace Qliniqueue.Views
                 Password = entryPassword.Text
             };
             if (!string.IsNullOrEmpty(user.Email) && !string.IsNullOrEmpty(user.Username) && !string.IsNullOrEmpty(user.Password))
-            { 
+            {
                 db.Insert(user);
+                Console.WriteLine(user);
                 Device.BeginInvokeOnMainThread(async () =>
                 {
                     var result = await this.DisplayAlert("Információ", "Sikeres regisztráció!", "OK", ":)");
@@ -43,7 +44,7 @@ namespace Qliniqueue.Views
             }
             else
                 DisplayAlert("Hiba", "Nincs kitöltve minden mező!", "OK", "_");
-            
+
         }
     }
 }

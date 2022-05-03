@@ -24,11 +24,15 @@ namespace Qliniqueue.Views
         {
             var dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UsersDB.db");
             var db = new SQLiteConnection(dbPath);
-            var query = db.Table<RegisterUsersTable>().Where(u => u.Username.Equals(entryUsername.Text) || u.Email.Equals(entryUsername.Text) && u.Password.Equals(entryPassword.Text)).FirstOrDefault();
-            
-            if(query != null)
+            var query = db.Table<RegisterUsersTable>()
+                            .Where(u => u.Username.Equals(entryUsername.Text) ||
+                                    u.Email.Equals(entryUsername.Text) &&
+                                    u.Password.Equals(entryPassword.Text))
+                            .FirstOrDefault();
+
+            if (query != null)
             {
-                App.Current.MainPage = new NavigationPage(new HomePage());
+                App.Current.MainPage = new NavigationPage(new DoctorsPage());
             }
             else
             {
@@ -36,7 +40,7 @@ namespace Qliniqueue.Views
                 {
                     var result = await this.DisplayAlert("Hiba", "Sikertelen bejelentkezés!", "OK", ":(");
                     if (result) await Navigation.PushAsync(new LoginPage());
-                    else await Navigation.PushAsync(new LoginPage());
+                    //else await Navigation.PushAsync(new LoginPage());
                 });
             }
         }

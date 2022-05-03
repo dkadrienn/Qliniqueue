@@ -10,13 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace Qliniqueue.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePage : ContentPage
+    public partial class DoctorDetailPage : ContentView
     {
-        public HomePage()
+        public DoctorDetailPage()
         {
             InitializeComponent();
-
-            //bttnDoctors.Text = 
         }
     }
 }
