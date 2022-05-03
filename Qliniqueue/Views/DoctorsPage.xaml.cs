@@ -2,15 +2,12 @@
 using System;
 using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Diagnostics;
-using System.Net;
 
 namespace Qliniqueue.Views
 {
@@ -27,9 +24,11 @@ namespace Qliniqueue.Views
             GetJsonAsync();
         }
 
-        private void lvDoctors_itemClick(object sender, SelectedItemChangedEventArgs e)
+        private async void lvDoctors_itemClick(object sender, SelectedItemChangedEventArgs e)
         {
-            Debug.WriteLine(doctorsList[e.SelectedItemIndex].name);
+
+            DoctorDetailPage doctorDetailPage = new DoctorDetailPage(doctorsList[e.SelectedItemIndex].id.ToString());
+            await Navigation.PushAsync(doctorDetailPage);
         }
 
         public async Task GetJsonAsync()

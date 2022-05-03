@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Qliniqueue.Views.DoctorsPage">
     <StackLayout>
-        <Frame BackgroundColor="#5A97B1" Padding="24" CornerRadius="0">
+        <Frame BackgroundColor="#5A97B1" Padding="14" CornerRadius="0">
             <Label Text="Doctors" HorizontalTextAlignment="Center"
                        TextColor="White" FontSize="25"/>
         </Frame>

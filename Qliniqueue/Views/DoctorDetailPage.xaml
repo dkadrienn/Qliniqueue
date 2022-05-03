@@ -1,10 +1,27 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Qliniqueue.Views.DoctorDetailPage">
-  <ContentView.Content>
-      <StackLayout>
-          <Label Text="Hello Xamarin.Forms!" />
-      </StackLayout>
-  </ContentView.Content>
-</ContentView>
+    <ContentPage.Content>
+        <Grid Margin="50,50,50,50" x:Name="grdDoctor">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <Image x:Name="img" Source="{Binding imageURL}" Grid.Row="0" Margin="0,0,0,20"/>
+            <Label x:Name="lblName" Text="" Grid.Row="1"/>
+            <Label x:Name="lblProfil" Text="" Grid.Row="2"/>
+            <Label x:Name="lblDescription" Text="" Grid.Row="3"/>
+            <Label Text="Vélemény" Grid.Row="4"/>
+            <Label x:Name="lblRate" Text="" Grid.Row="5"/>
+            <Button x:Name="bttnReserve" Text="Időpontfoglalás" BackgroundColor="#5A97B1"
+                    TextColor="white" Grid.Row="6" Clicked="reservation_clicked"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
