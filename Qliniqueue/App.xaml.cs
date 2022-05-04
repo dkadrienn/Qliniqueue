@@ -9,7 +9,9 @@ namespace Qliniqueue
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LoginPage());
+            //MainPage = new NavigationPage(new LoginPage());
+
+            MainPage = new AppShell();
         }
 
         protected override void OnStart()

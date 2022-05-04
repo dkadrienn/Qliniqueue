@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local ="clr-namespace:Qliniqueue.Views"
+             xmlns:template ="clr-namespace:Qliniqueue.Templates"
+             x:Class="Qliniqueue.AppShell"
+             FlyoutBackgroundColor="SlateGray"
+             FlyoutHeaderTemplate ="{DataTemplate template:FlyoutHeaderTemplate}">
+
+
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid Padding="20,10,0,10">
+
+                <Label Text="{Binding Title}"
+                       VerticalOptions="Center"
+                       FontSize="20"
+                       TextColor="White"/>
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+    
+    
+    <ShellItem Route="LoginPage" FlyoutItemIsVisible="False">
+        <ShellContent ContentTemplate="{DataTemplate local:LoginPage}"/>
+    </ShellItem>
+
+    <FlyoutItem Title="Kezdőlap" >
+
+        <ShellContent ContentTemplate="{DataTemplate local:HomePage}" />
+
+    </FlyoutItem>
+
+    <FlyoutItem Title="Programálásaim" >
+
+        <ShellContent ContentTemplate="{DataTemplate local:FutureDatesListPage}" />
+
+    </FlyoutItem>
+
+    <!--<FlyoutItem Title="Súgó" >
+        <ShellContent ></ShellContent>
+    </FlyoutItem>-->
+
+
+
+
+
+
+</Shell>

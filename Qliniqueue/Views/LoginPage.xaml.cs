@@ -20,7 +20,7 @@ namespace Qliniqueue.Views
             InitializeComponent();
         }
 
-        private void bttnLogin_Clicked(object sender, EventArgs e)
+        private async void bttnLogin_Clicked(object sender, EventArgs e)//
         {
             var dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UsersDB.db");
             var db = new SQLiteConnection(dbPath);
@@ -32,7 +32,8 @@ namespace Qliniqueue.Views
 
             if (query != null)
             {
-                App.Current.MainPage = new NavigationPage(new HomePage());
+                // App.Current.MainPage = new NavigationPage(new HomePage());
+                await Navigation.PushAsync(new HomePage());
             }
             else
             {
