@@ -32,7 +32,7 @@ namespace Qliniqueue.Views
 
             if (query != null)
             {
-                App.Current.MainPage = new NavigationPage(new DoctorsPage());
+                App.Current.MainPage = new NavigationPage(new HomePage());
             }
             else
             {

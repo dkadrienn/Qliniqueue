@@ -26,7 +26,6 @@ namespace Qliniqueue.Views
 
         private async void lvDoctors_itemClick(object sender, SelectedItemChangedEventArgs e)
         {
-
             DoctorDetailPage doctorDetailPage = new DoctorDetailPage(doctorsList[e.SelectedItemIndex].id.ToString());
             await Navigation.PushAsync(doctorDetailPage);
         }

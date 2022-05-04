@@ -18,5 +18,11 @@ namespace Qliniqueue.Views
 
             //bttnDoctors.Text = 
         }
+
+        private async void doctors_Click(object sender, EventArgs e)
+        {
+            DoctorsPage doctorsPage = new DoctorsPage();
+            await Navigation.PushAsync(doctorsPage);
+        }
     }
 }

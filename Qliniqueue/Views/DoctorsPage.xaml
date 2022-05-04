@@ -4,7 +4,7 @@
              x:Class="Qliniqueue.Views.DoctorsPage">
     <StackLayout>
         <Frame BackgroundColor="#5A97B1" Padding="14" CornerRadius="0">
-            <Label Text="Doctors" HorizontalTextAlignment="Center"
+            <Label Text="Orvosok" HorizontalTextAlignment="Center"
                        TextColor="White" FontSize="25"/>
         </Frame>
         <ListView x:Name="lvDoctors" Margin="20" RowHeight="80">

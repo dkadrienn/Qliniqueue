@@ -41,7 +41,7 @@
                 </StackLayout>
                 
                 <StackLayout Grid.Row="5" Orientation="Horizontal" VerticalOptions="End">
-                    <Button Text="Orvosaink" x:Name="bttnDoctors" FontSize="12" TextColor="#5A97B1" CornerRadius="5" HorizontalOptions="CenterAndExpand" WidthRequest="120" BackgroundColor="White" />
+                    <Button Text="Orvosaink" x:Name="bttnDoctors" FontSize="12" TextColor="#5A97B1" CornerRadius="5" HorizontalOptions="CenterAndExpand" WidthRequest="120" BackgroundColor="White" Clicked="doctors_Click"/>
                 </StackLayout>
             </Grid>
         </StackLayout>

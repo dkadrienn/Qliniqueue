@@ -13,6 +13,7 @@ namespace Qliniqueue
         public MainPage()
         {
             InitializeComponent();
+
         }
     }
 }

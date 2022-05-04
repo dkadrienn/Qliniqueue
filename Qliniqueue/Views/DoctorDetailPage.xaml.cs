@@ -14,10 +14,12 @@ namespace Qliniqueue.Views
     public partial class DoctorDetailPage : ContentPage
     {
         string _id = "1";
+        Doctor m;
         public DoctorDetailPage(string id)
         {
             InitializeComponent();
             _id = id;
+            m = new Doctor();
             GetJsonAync();
         }
 
@@ -36,7 +38,6 @@ namespace Qliniqueue.Views
                 var jsonObject = JObject.Parse(content.ToString());
                 Debug.WriteLine(jsonObject);
 
-                Doctor m = new Doctor();
                 string id = jsonObject["id"].ToString();
                 string name = jsonObject["name"].ToString();
                 string imageurl = jsonObject["imageURI"].ToString();
@@ -62,9 +63,10 @@ namespace Qliniqueue.Views
             }
         }
 
-        private void reservation_clicked(object sender, EventArgs e)
+        private async void reservation_clicked(object sender, EventArgs e)
         {
-
+            ReservationPage reservationPage = new ReservationPage(m);
+            await Navigation.PushAsync(reservationPage);
         }
     }
 }

@@ -35,18 +35,56 @@
       "allergies": "",
       "routine": false,
       "doctorId": 2,
-      "dateId": 1,
+      "dateId": "05/29/2015 05:50 AM",
       "id": 2
-    }
-  ],
-  "dates": [
+    },
     {
-      "year": 2022,
-      "month": "Nov",
-      "day": 12,
-      "From": 12.3,
-      "To": 15.3,
-      "id": 1
+      "name": "akk",
+      "age": 2,
+      "sex": "Male",
+      "symptoms": "jdhd",
+      "diseases": null,
+      "allergies": null,
+      "routine": true,
+      "doctorId": "1",
+      "date": "2022-05-06T07:00:00+03:00",
+      "id": 3
+    },
+    {
+      "name": "jaka",
+      "age": 555,
+      "sex": "Male",
+      "symptoms": "kdkd",
+      "diseases": null,
+      "allergies": null,
+      "routine": false,
+      "doctorId": "2",
+      "date": "2022-05-04T00:00:00+03:00",
+      "id": 4
+    },
+    {
+      "name": "hhh",
+      "age": 666,
+      "sex": "Male",
+      "symptoms": "hhhh",
+      "diseases": null,
+      "allergies": null,
+      "routine": true,
+      "doctorId": "3",
+      "date": "2022-05-04T00:00:00+03:00",
+      "id": 5
+    },
+    {
+      "name": "zsolt",
+      "age": 55,
+      "sex": "Male",
+      "symptoms": null,
+      "diseases": null,
+      "allergies": null,
+      "routine": true,
+      "doctorId": "3",
+      "date": "2022-05-04T11:00:00+03:00",
+      "id": 6
     }
   ]
 }
