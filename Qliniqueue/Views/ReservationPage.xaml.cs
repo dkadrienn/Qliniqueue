@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,20 +16,23 @@ namespace Qliniqueue.Views
     public partial class ReservationPage : ContentPage
     {
         private Doctor _doc;
-
-        Reservation res;
+        private string username;
+        private Reservation res;
         public ReservationPage(Doctor doc)
         {
             InitializeComponent();
+
+            username = Preferences.Get("username", "");
             _doc = doc;
             lblDoctName.Text = _doc.name;
             lblProfile.Text = _doc.profil;
             lblDescription.Text = _doc.description;
             lblRate.Text = _doc.rate;
             imgDoc.Source = _doc.imageURL;
-
+            
             res = new Reservation();
             res.doctorId = _doc.id;
+            res.doctorName = _doc.name;
         }
 
         public async Task PutJsonAsync()
@@ -42,7 +45,7 @@ namespace Qliniqueue.Views
             date = date.AddHours(hour);
 
             res.date = date;
-            res.name = ntryName.Text;
+            res.name = username;
             res.age = Convert.ToInt32(ntryAge.Text);
             res.sex = rdbttnMale.IsChecked ? "Male" : "Female";
             res.symptoms = ntrySympt.Text;
@@ -69,7 +72,9 @@ namespace Qliniqueue.Views
                 {
                     await this.DisplayAlert("Sikeres foglalás", "Foglalását rögzitettük", "OK");
                 });
-                await Navigation.PopToRootAsync();
+
+                FutureDatesListPage futureDatesListPage = new FutureDatesListPage();
+                await Navigation.PushAsync(futureDatesListPage);
             }
             else
             {

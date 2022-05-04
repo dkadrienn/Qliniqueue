@@ -16,6 +16,13 @@ namespace Qliniqueue.Models
         public bool routine { get; set; }
         public string doctorId { get; set; }
         public DateTime date { get; set; }
+        public string doctorName { get; set; }
+    }
 
+    public class Date
+    {
+        public DateTime dateOfProgramming { get; set; }
+        public string DisplayText { get; set; }
+        public string DoctorName { get; set; }
     }
 }

@@ -21,8 +21,8 @@
     </Shell.ItemTemplate>
     
     
-    <ShellItem Route="LoginPage" FlyoutItemIsVisible="False">
-        <ShellContent ContentTemplate="{DataTemplate local:LoginPage}"/>
+    <ShellItem Route="HomePage" FlyoutItemIsVisible="False">
+        <ShellContent ContentTemplate="{DataTemplate local:HomePage}"/>
     </ShellItem>
 
     <FlyoutItem Title="Kezdőlap" >
@@ -31,6 +31,12 @@
 
     </FlyoutItem>
 
+    <FlyoutItem Title="Orvosok" >
+
+        <ShellContent ContentTemplate="{DataTemplate local:DoctorsPage}" />
+
+    </FlyoutItem>
+    
     <FlyoutItem Title="Programálásaim" >
 
         <ShellContent ContentTemplate="{DataTemplate local:FutureDatesListPage}" />

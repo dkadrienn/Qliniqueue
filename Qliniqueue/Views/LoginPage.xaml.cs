@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -30,10 +30,11 @@ namespace Qliniqueue.Views
                                     u.Password.Equals(entryPassword.Text))
                             .FirstOrDefault();
 
+            Preferences.Set("username", entryUsername.Text);
+
             if (query != null)
             {
-                // App.Current.MainPage = new NavigationPage(new HomePage());
-                await Navigation.PushAsync(new HomePage());
+                App.Current.MainPage = new AppShell();           
             }
             else
             {
@@ -41,7 +42,6 @@ namespace Qliniqueue.Views
                 {
                     var result = await this.DisplayAlert("Hiba", "Sikertelen bejelentkezés!", "OK", ":(");
                     if (result) await Navigation.PushAsync(new LoginPage());
-                    //else await Navigation.PushAsync(new LoginPage());
                 });
             }
         }

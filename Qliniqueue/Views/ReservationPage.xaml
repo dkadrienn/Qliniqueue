@@ -36,8 +36,6 @@
             <Label x:Name="lblRate" Text="5.0" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" VerticalOptions="Center" FontSize="20"/>
             <DatePicker x:Name="datepicker" Date="{Binding currentDate}" Format="d" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,20,0,20"/>
             <Entry x:Name="ntryHour" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" VerticalOptions="Center" Placeholder="12:00" Keyboard="Numeric"/>
-            <Label Text="Név" Grid.Row="6" Grid.Column="0" VerticalOptions="Center"/>
-            <Entry x:Name="ntryName" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="5"/>
             <Label Text="Életkor" Grid.Row="7" Grid.Column="0" VerticalOptions="Center"/>
             <Entry x:Name="ntryAge" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="5" Keyboard="Numeric"/>
             <Label Text="Nem" Grid.Row="8" Grid.Column="0" VerticalOptions="Center"/>
@@ -51,7 +49,7 @@
             <Entry x:Name="ntryAllerg" Grid.Row="12" Grid.Column="2" Grid.ColumnSpan="4"/>
             <Label Text="Rutinelleőrzés" Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="4" VerticalOptions="Center"/>
             <RadioButton x:Name="rdbttnTrue" GroupName="Routine" IsChecked="True" Grid.Row="13" Grid.Column="2" Grid.ColumnSpan="2" Content="Igen" FontSize="13"/>
-            <RadioButton x:Name="rdbttnFalse" GroupName="Routine" Grid.Row="13" Grid.Column="3" Grid.ColumnSpan="2" Content="Nem" FontSize="13"/>
+            <RadioButton x:Name="rdbttnFalse" GroupName="Routine" Grid.Row="13" Grid.Column="4" Grid.ColumnSpan="2" Content="Nem" FontSize="13"/>
             <Button x:Name="bttnReserv" Text="Foglalás" Grid.Row="14" Grid.Column="1" Grid.ColumnSpan="4" BackgroundColor="#5A97B1" TextColor="White" Margin="0,50,0,50" Clicked="reserv_click"/>
         </Grid>
     </ScrollView>
