@@ -21,15 +21,15 @@
                     </StackLayout>
 
                     <StackLayout Grid.Row="1">
-                        <Entry Placeholder="Felhasználónév/Email" FontSize="16" x:Name="entryUsername"/>
+                        <Entry Placeholder="Felhasználónév/Email" FontSize="16" x:Name="entryUsername" AutomationId="entryUsername"/>
                     </StackLayout>
 
                     <StackLayout Grid.Row="2">
-                        <Entry Placeholder="Jelszó" IsPassword="True" FontSize="16" x:Name="entryPassword"/>
+                        <Entry Placeholder="Jelszó" IsPassword="True" FontSize="16" x:Name="entryPassword" AutomationId="entryPassword"/>
                     </StackLayout>
 
                     <StackLayout Grid.Row="3">
-                        <Button Text="Bejelentkezés" FontSize="12" TextColor="White" CornerRadius="5" HorizontalOptions="CenterAndExpand" WidthRequest="120" BackgroundColor="#5A97B1" Clicked="bttnLogin_Clicked" x:Name="bttnLogin"/>
+                        <Button Text="Bejelentkezés" FontSize="12" TextColor="White" CornerRadius="5" HorizontalOptions="CenterAndExpand" WidthRequest="120" BackgroundColor="#5A97B1" Clicked="bttnLogin_Clicked" x:Name="bttnLogin" AutomationId="bttnLogin"/>
                     </StackLayout>
                     
                     <StackLayout Grid.Row="4">

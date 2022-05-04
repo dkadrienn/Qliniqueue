@@ -4,6 +4,7 @@
              xmlns:local ="clr-namespace:Qliniqueue.Views"
              xmlns:template ="clr-namespace:Qliniqueue.Templates"
              x:Class="Qliniqueue.AppShell"
+             BackgroundColor="#5A97B1"
              FlyoutBackgroundColor="SlateGray"
              FlyoutHeaderTemplate ="{DataTemplate template:FlyoutHeaderTemplate}">
 

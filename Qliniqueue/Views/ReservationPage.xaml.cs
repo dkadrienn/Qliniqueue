@@ -1,4 +1,5 @@
-﻿using Qliniqueue.Models;
+﻿using Newtonsoft.Json.Linq;
+using Qliniqueue.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -18,11 +19,13 @@ namespace Qliniqueue.Views
         private Doctor _doc;
         private string username;
         private Reservation res;
+        private bool isReservedTheDate;
         public ReservationPage(Doctor doc)
         {
             InitializeComponent();
 
             username = Preferences.Get("username", "");
+            isReservedTheDate = false;
             _doc = doc;
             lblDoctName.Text = _doc.name;
             lblProfile.Text = _doc.profil;
@@ -54,16 +57,22 @@ namespace Qliniqueue.Views
             res.routine = rdbttnTrue.IsChecked ? true : false;
 
             bool isFilled = false;
-            if(res.age != null && res.name != null && (res.age < 110 && res.age > 0) && (hour >= 8 && hour < 16))
+            if( res.name != null && (res.age < 110 && res.age > 0) && (hour >= 8 && hour < 16) )
             {
                 isFilled = true;
+                await GetJsonAsync(res.doctorId, date);
             }
 
-            if (isFilled)
+            if (isReservedTheDate)
+            {
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    await this.DisplayAlert("Figyelem", "Ez a dátum már foglalt, vagy egy már lejárt dátumot adott meg!", "OK");
+                });
+            }
+            else if (isFilled)
             {
                 var payload = Newtonsoft.Json.JsonConvert.SerializeObject(res);
-                Debug.WriteLine(payload);
-
 
                 HttpContent c = new StringContent(payload, Encoding.UTF8, "application/json");
                 var response = await httpClient.PostAsync(uri, c);
@@ -82,6 +91,37 @@ namespace Qliniqueue.Views
                 {
                     await this.DisplayAlert("Figyelem", "A mezők kitöltése érvénytelen!", "OK");
                 });
+            }
+        }
+
+        public async Task GetJsonAsync(string id, DateTime date)
+        {
+            string uri_string = "http://192.168.61.131:3000/reservations" + $"?doctorId={id}";
+            var uri = new Uri(uri_string);
+            HttpClient httpClient = new HttpClient();
+            var response = await httpClient.GetAsync(uri_string);
+            List<DateTime> reservedDates = new List<DateTime>();
+            isReservedTheDate = false;
+
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                var jsonArray = JArray.Parse(content.ToString());
+
+                foreach (var token in jsonArray)
+                {
+                    reservedDates.Add(Convert.ToDateTime(token["date"].ToString()));
+                }
+
+                foreach(var d in reservedDates)
+                {
+                    if(DateTime.Compare(d, date) == 0 || DateTime.Compare(date, DateTime.Now) < 0)
+                    {
+                        Debug.WriteLine("KAKA");
+                        isReservedTheDate = true;
+                    }
+                }
+                
             }
         }
 
