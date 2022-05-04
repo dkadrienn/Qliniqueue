@@ -1,0 +1,52 @@
+{
+  "doctors": [
+    {
+      "name": "Dr. Minden Áron",
+      "imageURI": "https://gravatar.com/avatar/73e2191ec947c504a55afbec3c95e7b3?s=400&d=robohash&r=x",
+      "profil": "Urulógus",
+      "description": "10 év tapasztalat",
+      "rate": "5",
+      "id": 1
+    },
+    {
+      "name": "Dr. Pál Inka",
+      "imageURI": "https://gravatar.com/avatar/a1e25dc46b0f3425b81a3086cef7494a?s=400&d=robohash&r=x",
+      "profil": "Fogorvos",
+      "description": "10 év tapasztalat",
+      "rate": "5",
+      "id": 2
+    },
+    {
+      "name": "Dr. Füty Imre",
+      "imageURI": "https://gravatar.com/avatar/f479f83e33684b2d6112d75eeb7a1f8f?s=400&d=robohash&r=x",
+      "profil": "Idegsebész",
+      "description": "10 év tapasztalat",
+      "rate": "5.0",
+      "id": 3
+    }
+  ],
+  "reservations": [
+    {
+      "name": "Köllő Zsolt",
+      "age": 22,
+      "sex": "Male",
+      "symptoms": "fogfájás",
+      "diseases": "gyulladás",
+      "allergies": "",
+      "routine": false,
+      "doctorId": 2,
+      "dateId": 1,
+      "id": 2
+    }
+  ],
+  "dates": [
+    {
+      "year": 2022,
+      "month": "Nov",
+      "day": 12,
+      "From": 12.3,
+      "To": 15.3,
+      "id": 1
+    }
+  ]
+}
